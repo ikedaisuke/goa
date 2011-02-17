@@ -1,6 +1,7 @@
-diff -u /tmp/goa-3.0.2/GOA.hs goa-3.0.2/GOA.hs
+Only in goa: .git
+diff -u /tmp/goa-3.0.2/GOA.hs goa/GOA.hs
 --- /tmp/goa-3.0.2/GOA.hs	2008-09-21 14:13:04.000000000 +0900
-+++ goa-3.0.2/GOA.hs	2011-02-17 20:41:30.000000000 +0900
++++ goa/GOA.hs	2011-02-17 20:41:30.000000000 +0900
 @@ -1,6 +1,3 @@
 -
 -{-# OPTIONS -fglasgow-exts #-}
@@ -26,18 +27,46 @@ diff -u /tmp/goa-3.0.2/GOA.hs goa-3.0.2/GOA.hs
          (case m of
              Nothing           -> do
                -- maybe we can start the process automatically
-diff -u /tmp/goa-3.0.2/Setup.hs goa-3.0.2/Setup.hs
+diff -u /tmp/goa-3.0.2/README goa/README
+--- /tmp/goa-3.0.2/README	2008-09-21 14:13:04.000000000 +0900
++++ goa/README	2011-02-17 21:19:41.000000000 +0900
+@@ -7,6 +7,11 @@
+ The set of commands carefully developed in lambdabot during the years has
+ become a very useful tool for haskellers. For some it is like an addiction.
+ 
++See also http://www.haskell.org/haskellwiki/GHC/GHCi#GHCi_on_Acid
++
++The goa needs lambdabot too. 
++Check http://hackage.haskell.org/package/lambdabot
++
+ Installation
+ ------------
+ 
+diff -u /tmp/goa-3.0.2/Setup.hs goa/Setup.hs
 --- /tmp/goa-3.0.2/Setup.hs	2008-09-21 14:13:04.000000000 +0900
-+++ goa-3.0.2/Setup.hs	2011-02-17 20:39:02.000000000 +0900
++++ goa/Setup.hs	2011-02-17 20:39:02.000000000 +0900
 @@ -1,3 +1,3 @@
  #!/usr/bin/env runhaskell
  import Distribution.Simple
 -main = defaultMainWithHooks defaultUserHooks
 +main = defaultMainWithHooks simpleUserHooks
-Common subdirectories: /tmp/goa-3.0.2/fcgi and goa-3.0.2/fcgi
-diff -u /tmp/goa-3.0.2/goa.cabal goa-3.0.2/goa.cabal
+diff -u /tmp/goa-3.0.2/dot-ghci goa/dot-ghci
+--- /tmp/goa-3.0.2/dot-ghci	2008-09-21 14:13:04.000000000 +0900
++++ goa/dot-ghci	2011-02-17 21:16:50.000000000 +0900
+@@ -1,7 +1,6 @@
+ :m - Prelude
+ :m + GOA
+-setLambdabotHome "/home/dons/lambdabot"
+-wakeup
++setLambdabotHome "/where/is/bin/lambdabot"
+ :def bs        lambdabot "botsnack"
+ :def pl        lambdabot "pl"
+ :def index     lambdabot "index"
+Common subdirectories: /tmp/goa-3.0.2/fcgi and goa/fcgi
+Only in goa: goa-3.0.2.patch
+diff -u /tmp/goa-3.0.2/goa.cabal goa/goa.cabal
 --- /tmp/goa-3.0.2/goa.cabal	2008-09-21 14:13:04.000000000 +0900
-+++ goa-3.0.2/goa.cabal	2011-02-17 20:45:25.000000000 +0900
++++ goa/goa.cabal	2011-02-17 20:45:25.000000000 +0900
 @@ -7,15 +7,16 @@
  Synopsis:            GHCi on Acid
  Description:         Offers an interface to be able to call Lambdabot commands within GHCi;
