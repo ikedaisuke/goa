@@ -29,7 +29,7 @@ diff -u /tmp/goa-3.0.2/GOA.hs goa/GOA.hs
                -- maybe we can start the process automatically
 diff -u /tmp/goa-3.0.2/README goa/README
 --- /tmp/goa-3.0.2/README	2008-09-21 14:13:04.000000000 +0900
-+++ goa/README	2011-02-17 21:19:41.000000000 +0900
++++ goa/README	2011-02-17 21:35:39.000000000 +0900
 @@ -7,6 +7,11 @@
  The set of commands carefully developed in lambdabot during the years has
  become a very useful tool for haskellers. For some it is like an addiction.
@@ -42,6 +42,23 @@ diff -u /tmp/goa-3.0.2/README goa/README
  Installation
  ------------
  
+@@ -15,7 +20,7 @@
+ 
+ -- Build
+     $ chmod +x Setup.hs
+-    $ ./Setup.hs configure --prefix=/home/dons
++    $ ./Setup.hs configure --user
+     $ ./Setup.hs build
+     $ ./Setup.hs install
+ 
+@@ -77,6 +82,7 @@
+ ------------
+ 
+ [Lambdabot]: <http://www.cse.unsw.edu.au/~dons/lambdabot/>.
++[Lambdabot now on HackageDB]: <http://hackage.haskell.org/package/lambdabot>
+ [khjk-structured-text]: If you want to produce HTML documentation.
+ 
+ Additional Fun
 diff -u /tmp/goa-3.0.2/Setup.hs goa/Setup.hs
 --- /tmp/goa-3.0.2/Setup.hs	2008-09-21 14:13:04.000000000 +0900
 +++ goa/Setup.hs	2011-02-17 20:39:02.000000000 +0900
