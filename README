@@ -9,6 +9,9 @@ become a very useful tool for haskellers. For some it is like an addiction.
 
 See also http://www.haskell.org/haskellwiki/GHC/GHCi#GHCi_on_Acid
 
+The goa needs lambdabot too. 
+Check http://hackage.haskell.org/package/lambdabot
+
 Installation
 ------------
 
