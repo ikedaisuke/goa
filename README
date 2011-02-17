@@ -7,6 +7,8 @@ commands to the GHC interpreter for ease of use.
 The set of commands carefully developed in lambdabot during the years has
 become a very useful tool for haskellers. For some it is like an addiction.
 
+See also http://www.haskell.org/haskellwiki/GHC/GHCi#GHCi_on_Acid
+
 Installation
 ------------
 
