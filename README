@@ -20,7 +20,7 @@ Installation
 
 -- Build
     $ chmod +x Setup.hs
-    $ ./Setup.hs configure --prefix=/home/dons
+    $ ./Setup.hs configure --user
     $ ./Setup.hs build
     $ ./Setup.hs install
 
@@ -82,6 +82,7 @@ Dependencies
 ------------
 
 [Lambdabot]: <http://www.cse.unsw.edu.au/~dons/lambdabot/>.
+[Lambdabot now on HackageDB]: <http://hackage.haskell.org/package/lambdabot>
 [khjk-structured-text]: If you want to produce HTML documentation.
 
 Additional Fun
