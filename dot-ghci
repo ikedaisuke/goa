@@ -1,5 +1,6 @@
 :m - Prelude
 :m + GOA
+setLambdabotHome "/where/is/bin/lambdabot"
 :def bs        lambdabot "botsnack"
 :def pl        lambdabot "pl"
 :def index     lambdabot "index"
