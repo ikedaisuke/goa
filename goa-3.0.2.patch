@@ -1,0 +1,60 @@
+diff -u /tmp/goa-3.0.2/GOA.hs goa-3.0.2/GOA.hs
+--- /tmp/goa-3.0.2/GOA.hs	2008-09-21 14:13:04.000000000 +0900
++++ goa-3.0.2/GOA.hs	2011-02-17 20:41:30.000000000 +0900
+@@ -1,6 +1,3 @@
+-
+-{-# OPTIONS -fglasgow-exts #-}
+-
+ module GOA (
+     module Prelude,
+     lambdabot,
+@@ -108,7 +105,7 @@
+                 (do x <- runInteractiveProcess "./lambdabot" args Nothing Nothing
+                     return (Just x))
+                 (\e -> do
+-                    putStrLn $ "Unable to start lambdabot: " ++ show e
++                    putStrLn $ "Unable to start lambdabot: " ++ show ( e :: C.IOException )
+                     return Nothing)
+ 
+ -- |
+@@ -133,7 +130,7 @@
+     m <- readIORef state
+     C.handle
+         (\e -> do writeIORef state Nothing -- blank old handles if we fail
+-                  return ["Unable to run lambdabot: " ++ show e])
++                  return ["Unable to run lambdabot: " ++ show (e :: C.IOException)])
+         (case m of
+             Nothing           -> do
+               -- maybe we can start the process automatically
+diff -u /tmp/goa-3.0.2/Setup.hs goa-3.0.2/Setup.hs
+--- /tmp/goa-3.0.2/Setup.hs	2008-09-21 14:13:04.000000000 +0900
++++ goa-3.0.2/Setup.hs	2011-02-17 20:39:02.000000000 +0900
+@@ -1,3 +1,3 @@
+ #!/usr/bin/env runhaskell
+ import Distribution.Simple
+-main = defaultMainWithHooks defaultUserHooks
++main = defaultMainWithHooks simpleUserHooks
+Common subdirectories: /tmp/goa-3.0.2/fcgi and goa-3.0.2/fcgi
+diff -u /tmp/goa-3.0.2/goa.cabal goa-3.0.2/goa.cabal
+--- /tmp/goa-3.0.2/goa.cabal	2008-09-21 14:13:04.000000000 +0900
++++ goa-3.0.2/goa.cabal	2011-02-17 20:45:25.000000000 +0900
+@@ -7,15 +7,16 @@
+ Synopsis:            GHCi on Acid
+ Description:         Offers an interface to be able to call Lambdabot commands within GHCi;
+                      this is broken with recent Lambdabots.
+-Build-Depends:       base, directory, process,filepath
++		     --- Modified to work with the recent ghci. 
++		     --- IKEGAMI Daisuke <ikegami.da@gmail.com>
++Build-Depends:       base, directory, filepath, process
+ Build-Type:          Simple
+ Category:            System
+ Synopsis:            GHCi bindings to lambdabot
+ Exposed-Modules:     GOA
+ 
+-ghc-options:         -Wall -funbox-strict-fields
++ghc-options:         -Wall -funbox-strict-fields -fno-warn-unused-do-bind
+ 
+ data-files:          README, dot-ghci, fcgi/README, fcgi/lambdaweb.html
+ extra-source-files: fcgi/lambdaweb-ajax.js, fcgi/Setup.hs, fcgi/bot.cabal,
+                     fcgi/bot.hs, fcgi/lambdaweb-style.css, LICENSE
+-

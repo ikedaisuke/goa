@@ -1,0 +1,22 @@
+Name:                goa
+Version:             3.0.2
+License:             BSD3
+License-File:        LICENSE
+Author:              Paolo Martini
+Maintainer:          Chris Done <chrisdone@gmail.com>
+Synopsis:            GHCi on Acid
+Description:         Offers an interface to be able to call Lambdabot commands within GHCi;
+                     this is broken with recent Lambdabots.
+		     --- Modified to work with the recent ghci. 
+		     --- IKEGAMI Daisuke <ikegami.da@gmail.com>
+Build-Depends:       base, directory, filepath, process
+Build-Type:          Simple
+Category:            System
+Synopsis:            GHCi bindings to lambdabot
+Exposed-Modules:     GOA
+
+ghc-options:         -Wall -funbox-strict-fields -fno-warn-unused-do-bind
+
+data-files:          README, dot-ghci, fcgi/README, fcgi/lambdaweb.html
+extra-source-files: fcgi/lambdaweb-ajax.js, fcgi/Setup.hs, fcgi/bot.cabal,
+                    fcgi/bot.hs, fcgi/lambdaweb-style.css, LICENSE
