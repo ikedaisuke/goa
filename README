@@ -1,9 +1,8 @@
 GOA ~~ GHCi On Acid
 ===================
 
-AUTHOR
-
-:   Paolo Martini
+AUTHOR : Paolo Martini
+Maintainer at HackageDB: Chris Done <chrisdone@gmail.com>
 
 This set of tools is an attempt to bring the wonderful world of lambdabot
 commands to the GHC interpreter for ease of use.
