@@ -1,6 +1,10 @@
 GOA ~~ GHCi On Acid
 ===================
 
+AUTHOR
+
+:   Paolo Martini
+
 This set of tools is an attempt to bring the wonderful world of lambdabot
 commands to the GHC interpreter for ease of use.
 
